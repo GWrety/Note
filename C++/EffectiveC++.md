@@ -1,7 +1,5 @@
 # 导读
 
-
-
 # 1.accustoming yourself to C++
 ## 条款1 ：view C++ as a federation of languages(四个次语言)  
 1. C语言是C++的基础
