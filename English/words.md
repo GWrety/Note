@@ -122,3 +122,11 @@ Shed 棚屋
 Trait 特性
 Oppress 压迫，欺压
 Stray 走失
+
+curve 曲线
+intent 坚决的，意图
+tenure 终生教职
+incur 招致
+premium 保险费 
+counter 柜台，反驳
+agent 代理
