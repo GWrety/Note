@@ -12,3 +12,5 @@
 ## update()和repaint()区别    
 - update()会自动优化，比如在连续update时，只会在最后一次调用paintEvent()
 - repaint()会立即调用重绘函数，（做出动画连续效果）
+
+
