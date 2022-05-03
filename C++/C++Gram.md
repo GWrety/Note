@@ -41,11 +41,20 @@
 # String
 1. 截取字符串 
     ```c++
-    substr(int start,int length)  
+    substr(int start,int length);
+    //缺省长度的情况下是将到结束的全部复制过来  
     ```  
 2. 删除一个字符
     ```c++
     erase (iterator p);//参数时迭代器
+    ```
+3. 找第一个某字符出现的位置
+    ```c++
+    int i=a.find_first_of(' ');
+    ```
+4. 判断一个字符是不是数字
+    ```c++
+    bool c=isdigit(log2[pos]);
     ```
 # 易错
 1. 运算符优先级
