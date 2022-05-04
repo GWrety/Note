@@ -10,5 +10,6 @@
 # VS+Qt配置问题：
 1. 解决在vs中新建qt工程，无法打开qt 设计师界面的问题：
 	- Qt Tools - > options -> General把Qt Designer的false 改成True就行了！
-
+# Qt中版本兼容问题
+在Qt中，版本向下兼容。Qt6可以通过添加Qt5补充库来兼容Qt5
 
