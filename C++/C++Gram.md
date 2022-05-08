@@ -64,3 +64,20 @@
 	 if((n&1)==aim)
     ```
     
+# C++文件流
+```c++
+#include<fstream>
+//读文件
+ifstream infile;
+infile.open(StrFile, ios::in | ios::binary);//读文件，以二进制形式
+if (infile.is_open())//判断是否打开成功
+    infile.read((char*)&strHead, sizeof(tagBITMAPFILEHEADER));
+infile.seekg(strHead.bfOffBits, ios::beg);//读文件指针跳跃
+//写文件
+ofstream outfile;
+outfile.open(ComFile, ios::out | ios::binary);
+if (outfile.is_open())
+    outfile.write((char*)&strHead, sizeof(tagBITMAPFILEHEADER));
+outfile.seekp(strHead.bfOffBits, ios::beg);//写文件指针跳跃
+
+```

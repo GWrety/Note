@@ -3,4 +3,9 @@
 
 从此天下风云事，皆因一念出乡关。
 
+夫唯不争 故天下莫能与之争
+
+![](https://cdn.jsdelivr.net/gh/GWrety/Ima/20220505195925.png)
+
+
 
