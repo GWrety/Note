@@ -1,0 +1,1 @@
+idea只支持servlet4.0的，而tomcat 10.0需要servlet5.0，只能下tomcat4.0
