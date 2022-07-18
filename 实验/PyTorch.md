@@ -67,6 +67,7 @@ input->简单特征->提取特性->映射函数->output
 ## 可视化工具
 1. Visdom
 
+
 # 梯度下降
 分治法有可能会错过更优的目标点
 ## 梯度下降算法
@@ -78,12 +79,44 @@ input->简单特征->提取特性->映射函数->output
 ## 绘图时
 指数加权均值 将曲线画平滑
 ## 随机梯度下降
+每次更新都选一点的损失
 随机噪声可能会推动模型跨越鞍点，向最优值前进
 ![20220715202528](https://raw.githubusercontent.com/GWrety/Ima/master/images/20220715202528.png)
 
 - 缺点 没法并行计算
 ## 折中
-全都扔到一起算MSE性能不好，全部用随机梯度时间复杂度高
+全都扔到一起算训练模型性能不好，全部用随机梯度时间复杂度高
 Mini-Batch随机梯度(批量)
+每次选一小部分进行下降
+
+
+
+## 反向传播
+### 损失对权重的偏导
+![20220717155712](https://raw.githubusercontent.com/GWrety/Ima/master/images/20220717155712.png)
+### 多层普通网络可以合并，所以需要用非线性函数进行变换
+![20220717160818](https://raw.githubusercontent.com/GWrety/Ima/master/images/20220717160818.png)
+### 反向传播过程
+![20220717161543](https://raw.githubusercontent.com/GWrety/Ima/master/images/20220717161543.png)
+### 实例
+1.线性模型反向传播过程
+![20220717162224](https://raw.githubusercontent.com/GWrety/Ima/master/images/20220717162224.png)
+
+## PyTorch
+### Tensor
+张量，可以进行梯度的反向计算  自动前馈
+```Python
+b.requires_grad = True#设置进行计算历史的追踪，利用反向传播计算梯度
+l.backward()#进行前馈  l代表b参与计算后的结果
+b.data = b.data - 0.01 * b.grad.data#只取数据
+b.grad.data.zero_()#梯度数据手动清0
+```
+构建模型就是构建计算图
+
+# 用Pytorch实现线性回归
+
+
+
+
 
 
