@@ -114,9 +114,66 @@ b.grad.data.zero_()#梯度数据手动清0
 构建模型就是构建计算图
 
 # 用Pytorch实现线性回归
+1. 数据集
+2. 设计模型
+3. 构造损失函数和优化器
+    MSELoss
+    SGD 
+4. 训练周期
+## 转置转化
+![20220719082333](https://raw.githubusercontent.com/GWrety/Ima/master/images/20220719082333.png)
+
+## 最终过程
+![20220719130635](https://raw.githubusercontent.com/GWrety/Ima/master/images/20220719130635.png)
 
 
 
+# 逻辑斯特回归
+## 分类不是简单的线性回归
+在分类手写字母时，不能简单的将输出结果按0~9排，因为7与9的输入相似性更高，对于相似的输入，输出也因该在附近，而8不符合规律
+## 分类最后输出的是概率
 
+## torchvision
+包含了比较常用的数据集使用链接，进行下载到本地使用
+
+## 二分类问题
+只需要计算一个概率，剩下的另外一个直接1减去得到
+
+## 饱和函数
+logistics函数（又称之sigmoid函数）
+函数有极限
+![20220719173242](https://raw.githubusercontent.com/GWrety/Ima/master/images/20220719173242.png)
+
+## 逻辑斯特线性回归模型
+![20220719173445](https://raw.githubusercontent.com/GWrety/Ima/master/images/20220719173445.png)
+
+## 交叉商
+表示两个分布的相似性
+
+## 二分类所用的损失函数 BCE
+![20220719174803](https://raw.githubusercontent.com/GWrety/Ima/master/images/20220719174803.png)
+
+## 实际使用
+![20220719181351](https://raw.githubusercontent.com/GWrety/Ima/master/images/20220719181351.png)
+
+
+# 处理多维度特征输入
+修改权重的维度来配合输入与输出的维度
+
+## 层数可以通过维度转换来增加
+层数越多，学习能力越强，但可能会学习到噪声的规律，会导致问题
+
+## 能力
+1. 读文档
+2. 基本架构理解(面对新东西从容，泛化能力比较好)
+
+## 多层线性网络
+用一个变量就行
+![20220719220921](https://raw.githubusercontent.com/GWrety/Ima/master/images/20220719220921.png)
+
+## 激活函数
+有很多，有的连续，有的不连续
+
+# 加载数据集
 
 
