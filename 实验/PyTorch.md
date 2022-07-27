@@ -176,4 +176,109 @@ logistics函数（又称之sigmoid函数）
 
 # 加载数据集
 
+## 几个概念
+- epoch 所有样本使用一次
+- batch-size 每次更新所用的样本数量
+- iteration epoch/batch-size 迭代次数
+
+- shuffle 打乱数据集，确保每次epoch数据集顺序不同(需要支持索引)
+
+
+# 多分类问题
+在前面的分类问题中，只面临二分类，只需要一个饱和函数进行拟合
+
+多分类问题中，概率要大于0，且和应该为1
+
+## softmax层
+![20220720161426](https://raw.githubusercontent.com/GWrety/Ima/master/images/20220720161426.png)
+1. 指数运算保证大于0
+2. 相加概率为1
+![20220720165320](https://raw.githubusercontent.com/GWrety/Ima/master/images/20220720165320.png)
+
+## softmax之后的损失函数
+![20220720165959](https://raw.githubusercontent.com/GWrety/Ima/master/images/20220720165959.png)
+
+## 交叉商损失
+![20220720170757](https://raw.githubusercontent.com/GWrety/Ima/master/images/20220720170757.png)
+### Pytorch集成后
+![20220720170510](https://raw.githubusercontent.com/GWrety/Ima/master/images/20220720170510.png)
+
+
+
+## 识别手写图片
+
+## 概述
+图片的解析->转化为方格的值
+![20220720171137](https://raw.githubusercontent.com/GWrety/Ima/master/images/20220720171137.png)
+
+>灰度图像->单通道(channel)
+>彩色图片->三通道 R G B
+
+![20220720172351](https://raw.githubusercontent.com/GWrety/Ima/master/images/20220720172351.png)
+
+
+
+# 卷积神经网络
+
+## 卷积->特征提取器
+保留空间信息
+下采样
+
+## 全连接神经网络->分类器
+网络中全是线性层，串行链接
+任意两节点都有连接
+
+## 图像
+REB图像，格子填什么值。从自然界提取(光敏电阻)
+矢量图像，现场画，它放大也不会模糊，但没有天然的
+
+## 卷积
+取一个三通道高度的卷积核，遍历整个图像
+![20220724155840](https://raw.githubusercontent.com/GWrety/Ima/master/images/20220724155840.png)
+
+## 已知输入和输出的通道数
+![20220724160642](https://raw.githubusercontent.com/GWrety/Ima/master/images/20220724160642.png)
+
+## padding
+填充几圈，保证通道转换正常
+![20220724162321](https://raw.githubusercontent.com/GWrety/Ima/master/images/20220724162321.png)
+## stride
+跳跃遍历图像
+![20220724162358](https://raw.githubusercontent.com/GWrety/Ima/master/images/20220724162358.png)
+降低图像宽度和高度
+
+## 下采样
+![20220724162543](https://raw.githubusercontent.com/GWrety/Ima/master/images/20220724162543.png)
+同一个通道不变，找最大值
+
+## 完整过程
+![20220724163340](https://raw.githubusercontent.com/GWrety/Ima/master/images/20220724163340.png)
+
+## 模型构建
+![20220724163913](https://raw.githubusercontent.com/GWrety/Ima/master/images/20220724163913.png)
+
+# 卷积神经网络高级篇
+![20220724172851](https://raw.githubusercontent.com/GWrety/Ima/master/images/20220724172851.png)
+
+## 基础模块
+![20220724172910](https://raw.githubusercontent.com/GWrety/Ima/master/images/20220724172910.png)
+目的是多个分支并行训练，来找到更好的路径
+## 1*1的卷积
+通过减少通道数，来减小计算规模
+![20220724172707](https://raw.githubusercontent.com/GWrety/Ima/master/images/20220724172707.png)
+
+## 实现过程
+### 计算分支
+![20220724174405](https://raw.githubusercontent.com/GWrety/Ima/master/images/20220724174405.png)
+
+### 计算后沿通道的维度进行拼接
+![20220724174323](https://raw.githubusercontent.com/GWrety/Ima/master/images/20220724174323.png)
+![20220724174425](https://raw.githubusercontent.com/GWrety/Ima/master/images/20220724174425.png)
+
+## 梯度消失
+层数过多，导致靠近数据输入层的梯度过小，训练效果很差
+
+### 深度学习破解
+![20220724181434](https://raw.githubusercontent.com/GWrety/Ima/master/images/20220724181434.png)
+![20220724184003](https://raw.githubusercontent.com/GWrety/Ima/master/images/20220724184003.png)
 
